@@ -1,0 +1,168 @@
+
+
+
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JTextPane;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import static javax.swing.Action.NAME;
+import static javax.swing.Action.SHORT_DESCRIPTION;
+import javax.swing.SwingConstants;
+
+
+//- These are Java import statements that include necessary libraries and classes for creating a graphical calculator using Swing. Swing is a Java GUI (Graphical User Interface) library.
+
+
+public class CalculatorProjectFinal {
+
+//- This line declares the start of the `CalculatorProjectFinal` class, which contains the main logic for your calculator application.
+
+
+    private JFrame frame;
+    private final Action action = new SwingAction();
+    private JButton btnAC;
+    private JButton btnpm;
+    private JButton btnmod;
+    private JButton btndiv;
+    private JButton btn7;
+    private JButton btn8;
+    private JButton btn9;
+    private JButton btnmult;
+    private JButton btn4;
+    private JButton btn5;
+    private JButton btn6;
+    private JButton btndiff;
+    private JButton btn1;
+    private JButton btn2;
+    private JButton btn3;
+    private JButton btnsum;
+    private JButton btn0;
+    private JButton btndot;
+    private JButton btneql;
+    private JLabel lblans;
+    private double number1, number2, answer;
+    private int operator;
+
+
+//- These lines declare various instance variables that will be used throughout the class. These variables represent GUI components (buttons, labels), numbers for calculation, and an operator indicator.
+
+
+  
+
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    CalculatorProjectFinal window = new CalculatorProjectFinal();
+                    window.frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+
+//- This is the `main` method where the program starts. It sets up the GUI by creating an instance of `CalculatorProjectFinal`, making the frame visible, and handling exceptions if any occur during setup.
+
+
+    public CalculatorProjectFinal() {
+        initialize();
+    }
+
+
+//- This is the constructor for the `CalculatorProjectFinal` class. It calls the `initialize` method to set up the GUI components.
+
+
+    private void initialize() {
+        frame = new JFrame();
+        frame.getContentPane().setFont(new Font("Copperplate Gothic Bold", Font.BOLD, 11));
+        frame.setBounds(100, 100, 254, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().setLayout(null);
+
+
+//- In the `initialize` method, a `JFrame` (the main window) is created and configured with a specific size, position, and layout. The layout is set to `null`, which allows manual placement of components.
+
+
+        btnAC = new JButton("AC");
+        btnAC.setBackground(new Color(153, 153, 204));
+        btnAC.setFont(new Font("Tahoma", Font.PLAIN, 8));
+
+
+//- Here, a "AC" button is created and customized with a background color and font.
+
+
+        btnAC.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                lblans.setText("0");
+                number1 = 0;
+                number2 = 0;
+                operator = 0;
+                answer = 0;
+                lblans.setText("0");
+            }
+        });
+
+
+//- An action listener is added to the "AC" button. When clicked, it resets the calculator by setting the display (`lblans`) to "0" and clearing all number and operator variables.
+
+
+        btnAC.setBounds(10, 84, 47, 23);
+        frame.getContentPane().add(btnAC);
+
+
+//- The position and size of the "AC" button are set, and it's added to the frame.
+
+
+        // Similar code for other buttons and labels //The code for creating and configuring other buttons, such as numeric digits, mathematical operators, and labels, follows a similar pattern.
+
+
+    public void changednum(int value) {
+        // Method to handle input of numeric digits
+    }
+
+
+//- This method is called when numeric buttons are pressed. It updates the display based on the user's input.
+
+
+    public void clickedoperator(int oper) {
+        // Method to handle operator buttons (+, -, *, /, =)
+    }
+
+
+//- This method is called when operator buttons are pressed. It manages the calculation process.
+
+
+    public void calculate(int oper) {
+        // Method to perform arithmetic calculations
+    }
+
+
+//- This method performs the actual arithmetic calculations based on the selected operator.
+
+
+    private class SwingAction extends AbstractAction {
+        public SwingAction() {
+            putValue(NAME, "SwingAction");
+            putValue(SHORT_DESCRIPTION, "Some short description");
+        }
+
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("clicked");
+        }
+    }
+
+
+//- This is an inner class (`SwingAction`) that represents an action. In this case, it's not being used in the code.
+
+//This code creates a basic GUI-based calculator with buttons for digits and arithmetic operations. The `changednum`, `clickedoperator`, and `calculate` methods handle user input and perform calculations. The program follows typical Java Swing patterns for creating a GUI application.
