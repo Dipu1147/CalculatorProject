@@ -101,8 +101,7 @@ public class CalculatorProjectFinal {
         lblans.setText(String.valueOf(currentValue));
     }
 });
-            }
-        });
+            
         btnpm.setBounds(67, 83, 49, 23);
         frame.getContentPane().add(btnpm);
 
