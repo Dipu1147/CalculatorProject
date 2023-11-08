@@ -96,12 +96,8 @@ public class CalculatorProjectFinal {
         btnpm.setBackground(new Color(153, 153, 204));
         btnpm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-         double currentValue = Double.parseDouble(lblans.getText());
-        currentValue *= -1;
-        lblans.setText(String.valueOf(currentValue));
-    }
-});
-            
+            }
+        });
         btnpm.setBounds(67, 83, 49, 23);
         frame.getContentPane().add(btnpm);
 
@@ -343,4 +339,3 @@ public class CalculatorProjectFinal {
         }
     }
 }
-
